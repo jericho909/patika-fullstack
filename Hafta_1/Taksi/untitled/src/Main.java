@@ -21,7 +21,7 @@ public class Main {
             ucret = 20.0;
         }
 
-        //floating point error çözümüne baktım ama işi baya uzatıyordu. o yüzden burada entegre etmedim.
+        //floating point error çözümüne baktım ama bu proje bağlamında scope'u baya büyütüyordu. O yüzden entegre etmedim.
 
 
         System.out.println("Taksi ücreti: " + ucret + " TL");
