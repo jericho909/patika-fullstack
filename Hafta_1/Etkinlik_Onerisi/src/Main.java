@@ -1,11 +1,13 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        //değişkenler oluşturuldu
        int sicaklik = 0, c;
        boolean inputIsValid = false;
-       
+       //veri alındı
        Scanner input = new Scanner(System.in);
        System.out.println("Lütfen hava sıcaklığını Celcius cinsinden giriniz: ");
+       //yazı ile veri girilmemesi için while döngüsü oluşturuldu
        while(!inputIsValid) {
            if (input.hasNextInt()){
                sicaklik = input.nextInt();
@@ -17,7 +19,7 @@ public class Main {
            }
        }
        System.out.println("Hava sıcaklığı: " + sicaklik + " Celcius.");
-
+        //çıktı verildi
         if (sicaklik < 5) {
             System.out.println("Sıcaklık 5'den düşük, 'Kayak' yapmayı öneririm.");
         } else if (sicaklik >= 5 && sicaklik <= 15) {
