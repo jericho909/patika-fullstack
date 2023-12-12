@@ -1,9 +1,10 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        // değişkenler tanımlandı
         double a,b,result;
         int op;
-
+        //kullanıcıdan veri alınıyor
         Scanner input = new Scanner(System.in);
         System.out.println("Lütfen ilk rakamı giriniz: ");
         a = input.nextDouble();
@@ -15,7 +16,7 @@ public class Main {
         System.out.println("Seçenekler 1-> Çıkarma, 2 -> Toplama, 3 -> Çarpma, 4 -> Bölme ");
 
         op = input.nextInt();
-
+        //kullanıcının seçtiği rakama göre operasyon belirleniyor
         switch(op){
             case 1:
                 result = a - b;
