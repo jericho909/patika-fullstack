@@ -50,7 +50,7 @@ public class Main {
             }
         }
         String burc = "";
-        //koşullara tabi tutuldu
+        //koşullar uygulandı
         System.out.println("Doğum gününüz: " + gun + ", Doğum ayınız: " + Aylar[ayListe]);
         if(ay == 1) {
             if (gun <= 22) {
@@ -129,3 +129,4 @@ public class Main {
         System.out.println("Burcunuz: " + burc);
     }
 }
+
