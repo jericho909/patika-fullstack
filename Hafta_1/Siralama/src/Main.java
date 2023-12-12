@@ -43,7 +43,7 @@ public class Main {
         }
         //alınan verilen array'e atıldı
         Integer[] Numbers = {a,b,c};
-        System.out.println("Küçükten büyüğe sıralanmış rakamlar şunlardır:");
+        System.out.println("Küçükten büyüğe sıralanmış sayılar şunlardır:");
         //Sort metoduyla sayılar sıralanıp yazdırıldı
         Arrays.sort(Numbers);
         for (Integer number : Numbers) {
