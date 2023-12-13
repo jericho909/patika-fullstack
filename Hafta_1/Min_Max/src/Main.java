@@ -6,8 +6,11 @@ public class Main {
         ArrayList<Integer> list = new ArrayList<Integer>();
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Kaç tane sayı gireceksiniz:");
+        System.out.println("Kaç tane sayı gireceksiniz: ");
         c = input.nextInt();
+        if (c <= 0){
+            System.out.println("Hatalı giriş yaptınız. Program sonlandırılıyor.");
+        }
         //girilen rakama kadar döngü devam etmesi istendiği için do-while kullanıldı
         do {
             System.out.println(a + ". sayıyı giriniz: ");
