@@ -1,6 +1,9 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int n = 10;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Lütfen satır sayısını girin:");
+        int n = input.nextInt();
         for (int i= 0; i<= n-1; i++)
         {
             for (int j=0; j<=i; j++)
