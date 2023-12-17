@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class Main {
     public static void asal(int a, int i){
 
-        if (a % i == 0){
+        if (a % i == 0 && a != 2){
             System.out.print("Asal sayı değildir.");
-        } else if (i > a / 2){
+        } else if (i > a / 2 || a == 2){
             System.out.print("Asal sayıdır.");
         } else {
             asal(a, i + 1);
