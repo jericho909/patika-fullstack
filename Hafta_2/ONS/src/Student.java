@@ -4,7 +4,7 @@ public class Student {
     Course mat;
     Course fizik;
     Course kimya;
-    double avarage;
+    double average;
     boolean isPass;
 
 
@@ -54,7 +54,7 @@ public class Student {
         } else {
             this.isPass = isCheckPass();
             printNote();
-            System.out.println("Ortalama : " + this.avarage);
+            System.out.println("Ortalama : " + this.average);
             if (this.isPass) {
                 System.out.println("Sınıfı Geçti. ");
             } else {
@@ -64,13 +64,13 @@ public class Student {
     }
 
     public void calcAvarage() {
-        this.avarage = ((this.fizik.note * 0.9 + this.fizik.sozluNote * 0.1) + (this.kimya.note * 0.8 + this.kimya.sozluNote * 0.2)
+        this.average = ((this.fizik.note * 0.9 + this.fizik.sozluNote * 0.1) + (this.kimya.note * 0.8 + this.kimya.sozluNote * 0.2)
                 + (this.mat.note * 0.9 + this.mat.sozluNote * 0.1)) / 3;
     }
 
     public boolean isCheckPass() {
         calcAvarage();
-        return this.avarage > 55;
+        return this.average > 55;
     }
 
     public void printNote(){
