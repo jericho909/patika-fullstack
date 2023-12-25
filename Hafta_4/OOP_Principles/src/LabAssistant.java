@@ -7,8 +7,9 @@ public class LabAssistant extends Assistant{
     public void lablaraGir(){
         System.out.println(this.getFullName() + " entered the labaratory.");
     }
-
+    
+    @Override
     public void derseGir(){
         System.out.println(this.getTitle() + " " + this.getFullName() + " entered the class as an Assistant.");
-    };
+    }
 }

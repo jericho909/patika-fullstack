@@ -19,7 +19,7 @@ public class Main {
         System.out.println(a1.getFullName());
         ass1.quizYap();
         t1.senatoToplanti();
-        la1.lablaraGir();
+        la1.derseGir();
         off1.calis();
         it1.networkKurulum();
         sec1.nobet();
