@@ -51,7 +51,7 @@ public class Weapons {
      return weaponList;
     }
 
-    public static Weapons purchaseWeaponById(int id){
+    public static Weapons getWeaponById(int id){
         for (Weapons w: Weapons.weapons()){
             if (w.getId() == id){
                 return w;

@@ -61,23 +61,14 @@ public class Player {
             case 1:
                 System.out.println("You, " + player.getPlayerName() + ", are a Samurai. Valiant in battle, chained by your honor, " +
                         "you are fast and deadly.");
-                System.out.println("You have " + player.getGameClass().getHealthPoint() +
-                        " HP. Your attack damages opponents for " + player.getGameClass().getDmg() +
-                        " HP. You have " + player.getGameClass().getMoney() + " coins in your pocket.");
                 break;
             case 2:
                 System.out.println("You, " + player.getPlayerName() + ", are an Archer. Quick as a fox and deadly with a bow, " +
                         "you wait for the perfect moment to strike.");
-                System.out.println("You have " + player.getGameClass().getHealthPoint() +
-                        " HP. Your attack damages opponents for " + player.getGameClass().getDmg() +
-                        " HP. You have " + player.getGameClass().getMoney() + " coins in your pocket.");
                 break;
             case 3:
                 System.out.println("You, " + player.getPlayerName() + ", are a Knight. Heavy as a mountain and furious as the sun, " +
                         "your enemies flee just from your righteous gaze. ");
-                System.out.println("You have " + player.getGameClass().getHealthPoint() +
-                        " HP. Your attack damages opponents for " + player.getGameClass().getDmg() +
-                        " HP. You have " + player.getGameClass().getMoney() + " coins in your pocket.");
                 break;
             default:
                 System.out.println("Something went wrong.");

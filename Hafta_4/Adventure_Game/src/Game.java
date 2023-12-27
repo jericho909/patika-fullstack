@@ -26,8 +26,9 @@ public class Game {
             do {
                 System.out.println("============================");
                 System.out.println("You have " + player.getGameClass().getHealthPoint() +
-                        " HP. Your equipped weapon is: " + player.getInventory().getWeapon().getName() +
-                        " and it deals " +player.getInventory().getWeapon().getDmg() + " damage. You have " +
+                        " HP. Your equipped weapon is " + player.getInventory().getWeapon().getName() +
+                        " and it deals " +player.getInventory().getWeapon().getDmg() + " damage. You are wearing " +
+                        player.getInventory().getArmor().getName() + ". You have " +
                         player.getGameClass().getMoney() + " coins.");
                 System.out.println("Where would you like to go?");
                 System.out.println("1 => House \n2 => Store");
@@ -35,6 +36,10 @@ public class Game {
                 int locationSelect = input.nextInt();
                 if (locationSelect != currentLocation.getId()) {
                     switch (locationSelect){
+                        case 0:
+                            System.out.println("Goodbye.");
+                            locationSelectIsValid = true;
+                            break;
                         case 1:
                             location = new Safehouse(player);
                             currentLocation = location;
