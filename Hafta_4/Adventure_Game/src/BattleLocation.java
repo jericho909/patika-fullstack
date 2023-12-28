@@ -44,6 +44,9 @@ public abstract class BattleLocation extends Location{
         if (battleSelection.equals("B")){
             if (beginCombat(numberOfEnemies, this.getPlayer())){
                 System.out.println("You win the battle!");
+                System.out.println("You gained " + numberOfEnemies * this.getEnemy().getLoot() + " coins for the " +
+                        numberOfEnemies + " beasts you slain!");
+                this.getPlayer().getGameClass().setMoney(this.getPlayer().getGameClass().getMoney() + numberOfEnemies * this.getEnemy().getLoot());
                 return true;
             }
         }

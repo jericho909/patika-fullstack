@@ -76,7 +76,9 @@ public class Game {
             } while (!locationSelectIsValid);
 
         } while (player.getGameClass().getHealthPoint() > 0);
-
+        if (player.getGameClass().getHealthPoint() <= 0){
+            System.out.println("Your HP is now zero. You died!");
+        }
     }
 
 

@@ -1,4 +1,3 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Player {
@@ -33,19 +32,19 @@ public class Player {
 
         System.out.println("What is your speciality? ");
         System.out.println("1 => Swords & Agility");
-        System.out.println("2 => Archery");
-        System.out.println("3 => Mace & Two Handed Combat");
+        System.out.println("2 => Daggers & Sneak");
+        System.out.println("3 => Mace & Heavy Combat");
         int classChoice = input.nextInt();
         Player player = null;
         switch (classChoice){
             case 1:
-                player = new Player(playerName, new Samurai());
+                player = new Player(playerName, new Swordsman());
                 break;
             case 2:
-                player = new Player(playerName, new Archer());
+                player = new Player(playerName, new Rogue());
                 break;
             case 3:
-                player = new Player(playerName, new Knight());
+                player = new Player(playerName, new Paladin());
                 break;
             default:
                 System.out.println("Invalid choice.");
@@ -67,7 +66,7 @@ public class Player {
                         "you wait for the perfect moment to strike.");
                 break;
             case 3:
-                System.out.println("You, " + player.getPlayerName() + ", are a Knight. Heavy as a mountain and furious as the sun, " +
+                System.out.println("You, " + player.getPlayerName() + ", are a Paladin. Heavy as a mountain and furious as the sun, " +
                         "your enemies flee just from your righteous gaze. ");
                 break;
             default:

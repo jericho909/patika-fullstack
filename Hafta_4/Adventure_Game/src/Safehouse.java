@@ -10,13 +10,7 @@ public class Safehouse extends NormalLocation{
     }
 
     static void refreshHP(Player player){
-        if (player.getGameClass().getHealthPoint() == 21) {
-            player.getGameClass().setHealthPoint(21);
-        } else if (player.getGameClass().getHealthPoint() == 24) {
-            player.getGameClass().setHealthPoint(24);
-        } else if (player.getGameClass().getHealthPoint() == 18) {
-            player.getGameClass().setHealthPoint(18);
-        }
+        player.getGameClass().setHealthPoint(player.getGameClass().getDefaultHealth());
 
     }
 }
