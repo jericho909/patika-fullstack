@@ -46,7 +46,8 @@ public abstract class BattleLocation extends Location{
                 System.out.println("You win the battle!");
                 System.out.println("You gained " + numberOfEnemies * this.getEnemy().getLoot() + " coins for the " +
                         numberOfEnemies + " beasts you slain!");
-                this.getPlayer().getGameClass().setMoney(this.getPlayer().getGameClass().getMoney() + numberOfEnemies * this.getEnemy().getLoot());
+                this.getPlayer().getGameClass().setMoney(this.getPlayer().getGameClass().getMoney() +
+                        numberOfEnemies * this.getEnemy().getLoot());
                 return true;
             }
         }

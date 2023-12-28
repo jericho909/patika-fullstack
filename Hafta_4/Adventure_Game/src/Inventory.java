@@ -2,6 +2,34 @@ public class Inventory {
     private Weapons weapon;
     private Armors armor;
 
+    private String riverLoot;
+    private String caveLoot;
+    private String forestLoot;
+
+    public String getRiverLoot() {
+        return riverLoot;
+    }
+
+    public void setRiverLoot(String riverLoot) {
+        this.riverLoot = riverLoot;
+    }
+
+    public String getCaveLoot() {
+        return caveLoot;
+    }
+
+    public void setCaveLoot(String caveLoot) {
+        this.caveLoot = caveLoot;
+    }
+
+    public String getForestLoot() {
+        return forestLoot;
+    }
+
+    public void setForestLoot(String forestLoot) {
+        this.forestLoot = forestLoot;
+    }
+
     public Weapons getWeapon() {
         return weapon;
     }

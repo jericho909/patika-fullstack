@@ -58,11 +58,11 @@ public class Player {
     public static void gameStartMsg(int classChoice, Player player){
         switch (classChoice){
             case 1:
-                System.out.println("You, " + player.getPlayerName() + ", are a Samurai. Valiant in battle, chained by your honor, " +
+                System.out.println("You, " + player.getPlayerName() + ", are a Swordsman. Valiant in battle, chained by your honor, " +
                         "you are fast and deadly.");
                 break;
             case 2:
-                System.out.println("You, " + player.getPlayerName() + ", are an Archer. Quick as a fox and deadly with a bow, " +
+                System.out.println("You, " + player.getPlayerName() + ", are a Rogue. Silent as a mouse and deadly with your daggers, " +
                         "you wait for the perfect moment to strike.");
                 break;
             case 3:
