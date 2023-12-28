@@ -27,11 +27,11 @@ public class Game {
                 System.out.println("============================");
                 System.out.println("You have " + player.getGameClass().getHealthPoint() +
                         " HP. Your equipped weapon is " + player.getInventory().getWeapon().getName() +
-                        " and it deals " +player.getInventory().getWeapon().getDmg() + " damage. You are wearing " +
+                        " and it deals " + Player.getPlayerDMGwithWeapon(player) + " damage. You are wearing " +
                         player.getInventory().getArmor().getName() + ". You have " +
                         player.getGameClass().getMoney() + " coins.");
                 System.out.println("Where would you like to go?");
-                System.out.println("1 => House \n2 => Store");
+                System.out.println("1 => House \n2 => Store \n3 => Cave \n4 => Forest \n5 => River ");
                 System.out.println("============================");
                 int locationSelect = input.nextInt();
                 if (locationSelect != currentLocation.getId()) {
@@ -48,6 +48,21 @@ public class Game {
                             break;
                         case 2:
                             location = new Toolstore(player);
+                            currentLocation = location;
+                            locationSelectIsValid = true;
+                            break;
+                        case 3:
+                            location = new Cave(player);
+                            currentLocation = location;
+                            locationSelectIsValid = true;
+                            break;
+                        case 4:
+                            location = new Forest(player);
+                            currentLocation = location;
+                            locationSelectIsValid = true;
+                            break;
+                        case 5:
+                            location = new River(player);
                             currentLocation = location;
                             locationSelectIsValid = true;
                             break;

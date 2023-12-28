@@ -75,6 +75,13 @@ public class Player {
         }
     }
 
+    public static int getPlayerDMGwithWeapon(Player player){
+        return player.gameClass.getDmg() + player.getInventory().getWeapon().getDmg();
+    }
+
+
+
+
     public Inventory getInventory() {
         return inventory;
     }

@@ -3,12 +3,24 @@ public class Enemy {
     private int id;
     private int dmg;
     private int HP;
+    private int loot;
 
-    public Enemy(String name, int id, int dmg, int HP) {
+    private int defaultHealth;
+    public Enemy(String name, int id, int dmg, int HP, int loot) {
         this.name = name;
         this.id = id;
         this.dmg = dmg;
         this.HP = HP;
+        this.defaultHealth = HP;
+        this.loot = loot;
+    }
+
+    public int getLoot() {
+        return loot;
+    }
+
+    public void setLoot(int loot) {
+        this.loot = loot;
     }
 
     public String getName() {
@@ -40,6 +52,17 @@ public class Enemy {
     }
 
     public void setHP(int HP) {
+        if (HP == 0){
+            HP = 0;
+        }
         this.HP = HP;
+    }
+
+    public int getDefaultHealth() {
+        return defaultHealth;
+    }
+
+    public void setDefaultHealth(int defaultHealth) {
+        this.defaultHealth = defaultHealth;
     }
 }
