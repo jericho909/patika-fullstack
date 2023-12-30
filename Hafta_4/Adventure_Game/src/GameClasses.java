@@ -3,6 +3,7 @@ public abstract class GameClasses {
     private int healthPoint;
     private int money;
     private int defaultHealth;
+    private int initiative;
 
     public int getDmg() {
         return dmg;
@@ -24,6 +25,14 @@ public abstract class GameClasses {
         return money;
     }
 
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
+    }
+
     public void setMoney(int money) {
         this.money = money;
     }
@@ -36,10 +45,11 @@ public abstract class GameClasses {
         this.defaultHealth = defaultHealth;
     }
 
-    public GameClasses(int dmg, int healthPoint, int money) {
+    public GameClasses(int dmg, int healthPoint, int money, int initiative) {
         this.dmg = dmg;
         this.healthPoint = healthPoint;
         this.money = money;
         this.defaultHealth = healthPoint;
+        this.initiative = initiative;
     }
 }

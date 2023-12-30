@@ -20,6 +20,14 @@ public class Game {
                 System.out.println("You are in your safehouse.");
             } else if (Objects.equals(currentLocation.getName(), "Store")) {
                 System.out.println("You are in the store.");
+            } else if (Objects.equals(currentLocation.getName(), "Cave")) {
+                System.out.println("You are in the Cave.");
+            } else if (Objects.equals(currentLocation.getName(), "Forest")) {
+                System.out.println("You are in the Forest.");
+            } else if (Objects.equals(currentLocation.getName(), "River")) {
+                System.out.println("You are in the River.");
+            } else if (Objects.equals(currentLocation.getName(), "Mine")) {
+                System.out.println("You are in the Mine.");
             }
 
             boolean locationSelectIsValid = false;
@@ -31,7 +39,7 @@ public class Game {
                         player.getInventory().getArmor().getName() + ". You have " +
                         player.getGameClass().getMoney() + " coins.");
                 System.out.println("Where would you like to go?");
-                System.out.println("1 => House \n2 => Store \n3 => Cave \n4 => Forest \n5 => River ");
+                System.out.println("1 => House \n2 => Store \n3 => Cave \n4 => Forest \n5 => River \n6 => Mine \n7 => Temple");
                 System.out.println("============================");
                 int locationSelect = input.nextInt();
                 if (locationSelect != currentLocation.getId()) {
@@ -63,6 +71,16 @@ public class Game {
                             break;
                         case 5:
                             location = new River(player);
+                            currentLocation = location;
+                            locationSelectIsValid = true;
+                            break;
+                        case 6:
+                            location = new Mine(player);
+                            currentLocation = location;
+                            locationSelectIsValid = true;
+                            break;
+                        case 7:
+                            location = new Temple(player);
                             currentLocation = location;
                             locationSelectIsValid = true;
                             break;

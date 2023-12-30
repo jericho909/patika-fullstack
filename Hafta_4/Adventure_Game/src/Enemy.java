@@ -4,15 +4,26 @@ public class Enemy {
     private int dmg;
     private int HP;
     private int loot;
+    private int initiative;
 
     private int defaultHealth;
-    public Enemy(String name, int id, int dmg, int HP, int loot) {
+
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
+    }
+
+    public Enemy(String name, int id, int dmg, int HP, int loot, int initiative) {
         this.name = name;
         this.id = id;
         this.dmg = dmg;
         this.HP = HP;
         this.defaultHealth = HP;
         this.loot = loot;
+        this.initiative = initiative;
     }
 
     public int getLoot() {

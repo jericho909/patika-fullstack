@@ -1,5 +1,5 @@
 public class Paladin extends GameClasses{
     public Paladin() {
-        super(8, 24, 5);
+        super(8, 24, 5, 4);
     }
 }
