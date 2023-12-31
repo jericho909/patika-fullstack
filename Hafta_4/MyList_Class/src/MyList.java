@@ -96,7 +96,9 @@ public class MyList <T>{
     @Override
     public String toString(){
         for(T element: arr){
-            System.out.println(element);
+            if (element != null){
+                System.out.println(element);
+            }
         }
         return null;
     }
