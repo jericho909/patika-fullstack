@@ -46,8 +46,8 @@ public class Books implements Comparable{
     }
 
 
-//    @Override
-//    public int compareTo(Object o) {
-//        return this.getBookName().compareTo();
-//    }
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

@@ -13,20 +13,31 @@ public class Main {
         Books book4 = new Books("Benim de Söyleyeceklerim Var",
                 248, "Umut Sarıkaya", 2012);
         Books book5 = new Books("Blood, Sweat, and Pixels: The Triumphant, Turbulent Stories Behind How Video " +
-                "Games Are Made", 304, "Jason Schreier", 2017);
+                "Games Are Made", 305, "Jason Schreier", 2017);
 
 
-        Set<Books> nameSortedBookset = new TreeSet<>();
+        Set<Books> nameSortedBookset = new TreeSet<>(new NameComparitor());
         nameSortedBookset.add(book1);
         nameSortedBookset.add(book2);
         nameSortedBookset.add(book3);
         nameSortedBookset.add(book4);
         nameSortedBookset.add(book5);
 
-        for (Books book: nameSortedBookset) {
-            System.out.println(book.getBookName());
-        }
+        Set<Books> pageCountSortedBookset = new TreeSet<>(new PageComparator());
+        pageCountSortedBookset.add(book1);
+        pageCountSortedBookset.add(book2);
+        pageCountSortedBookset.add(book3);
+        pageCountSortedBookset.add(book4);
+        pageCountSortedBookset.add(book5);
 
+        nameSortedBookset.forEach(books -> {
+            System.out.println("Book Name: " + books.getBookName() + " || Page Count: " +  books.getPageCount());
+        });
+
+        System.out.println("===============");
+        pageCountSortedBookset.forEach(books -> {
+            System.out.println("Book Name: " + books.getBookName() + " || Page Count: " +  books.getPageCount());
+        });
 
     }
 }
