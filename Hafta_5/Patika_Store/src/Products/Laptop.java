@@ -43,6 +43,7 @@ public class Laptop extends Products{
             System.out.println("=======LAPTOP OPERATIONS=======");
             System.out.println("1 - Show all products");
             System.out.println("2 - Add new product");
+            System.out.println("3 - Remove a product");
             System.out.println("0 - Previous Menu");
             try {
                 menuSelection = input.nextInt();
@@ -55,6 +56,9 @@ public class Laptop extends Products{
                     break;
                 case 2:
                     addLaptop(laptops);
+                    break;
+                case 3:
+                    deleteProduct(laptops);
                     break;
                 case 0:
                     System.out.println("Exiting to previous menu.");
@@ -109,6 +113,23 @@ public class Laptop extends Products{
 
         }
 
+    }
+
+    public static void deleteProduct(ArrayList<Laptop> laptop){
+        showLaptops();
+        ArrayList<Integer> laptopIDList = new ArrayList<>();
+        for (Laptop laptops: laptop) {
+            laptopIDList.add(laptops.getId());
+        }
+        System.out.println("Please select the id of the product you want to delete: ");
+        int deletionSelection = input.nextInt();
+        if (laptopIDList.contains(deletionSelection)){
+            laptop.removeIf(laptops -> deletionSelection == laptops.getId());
+            System.out.println("Product removed.");
+            showLaptops();
+        } else {
+            System.out.println("ID not found.");
+        }
     }
 
 }

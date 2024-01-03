@@ -60,6 +60,7 @@ public class Phones extends Products {
             System.out.println("=======PHONE OPERATIONS=======");
             System.out.println("1 - Show all products");
             System.out.println("2 - Add new product");
+            System.out.println("3 - Delete product");
             System.out.println("0 - Previous Menu");
             try {
                 menuSelection = input.nextInt();
@@ -72,6 +73,9 @@ public class Phones extends Products {
                     break;
                 case 2:
                     addPhone(phones);
+                    break;
+                case 3:
+                    deleteProduct(phones);
                     break;
                 case 0:
                     System.out.println("Exiting to previous menu.");
@@ -149,5 +153,20 @@ public class Phones extends Products {
 
     }
 
-
+    public static void deleteProduct(ArrayList<Phones> phone){
+        showPhones();
+        ArrayList<Integer> phoneIDList = new ArrayList<>();
+        for (Phones phones: phone) {
+            phoneIDList.add(phones.getId());
+        }
+        System.out.println("Please select the id of the product you want to delete: ");
+        int deletionSelection = input.nextInt();
+        if (phoneIDList.contains(deletionSelection)){
+            phone.removeIf(phones -> deletionSelection == phones.getId());
+            System.out.println("Product removed.");
+            showPhones();
+        } else {
+            System.out.println("ID not found.");
+        }
+    }
 }
