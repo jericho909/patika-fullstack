@@ -7,7 +7,7 @@ import entities.User;
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginView extends JFrame{
+public class LoginView extends Layout{
     private JPanel container;
     private JPanel w_top;
     private JLabel lbl_welcomemsg;
@@ -25,15 +25,7 @@ public class LoginView extends JFrame{
         //draw the UI
         this.add(container);
         //when GUI is closed end the program
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Rent A Car");
-        //the dimensions of the GUI
-        this.setSize(400,400);
-        //calculating the viewpoet to be in the middle of the users screen
-        int userViewportHeight = (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() - this.getSize().height) / 2;
-        int userViewportWidth = (int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() - this.getSize().width) / 2;
-        this.setLocation(userViewportWidth, userViewportHeight);
-        this.setVisible(true);
+        layoutStart(400, 400);
         //making sure the fields are not empty
         btn_login.addActionListener(e -> {
             if (Helper.isFieldEmpty(this.field_username)){
@@ -46,7 +38,8 @@ public class LoginView extends JFrame{
                     if (loginUser == null){
                         Helper.showErrorMessage("User not found.");
                     } else {
-                        System.out.println(loginUser.toString());
+                        AdminView adminView = new AdminView(loginUser);
+                        dispose();
                     }
                 }
             }
