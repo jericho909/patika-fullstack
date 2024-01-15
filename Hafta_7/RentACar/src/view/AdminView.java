@@ -1,6 +1,7 @@
 package view;
 
 import business.BrandManager;
+import core.Helper;
 import entities.Brand;
 import entities.User;
 
@@ -8,6 +9,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 public class AdminView extends Layout{
@@ -33,18 +36,20 @@ public class AdminView extends Layout{
         }
         this.lbl_welcomemsg.setText("Welcome, " +this.currentUser.getUser_name());
 
+        refreshBrandTable();
+        loadBrandComponent();
+
+        this.tb_brand.setComponentPopupMenu(brandMenu);
+    }
+
+    public void refreshBrandTable(){
         Object[] col_brand = {"Brand ID", "Brand Name"};
-        ArrayList<Brand> brandList = this.brandManager.findAll();
-        this.tmdl_brand.setColumnIdentifiers(col_brand);
-        for (Brand brand: brandList){
-            Object[] obj = {brand.getBrand_id(), brand.getBrand_name()};
-            this.tmdl_brand.addRow(obj);
-        }
+        ArrayList<Object[]> brandList = this.brandManager.getForTable(col_brand.length);
+        this.createTable(this.tmdl_brand, this.tb_brand, col_brand, brandList);
 
+    }
 
-        this.tb_brand.setModel(this.tmdl_brand);
-        this.tb_brand.getTableHeader().setReorderingAllowed(false);
-        this.tb_brand.setEnabled(false);
+    public void loadBrandComponent(){
         this.tb_brand.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -55,15 +60,35 @@ public class AdminView extends Layout{
 
         this.brandMenu = new JPopupMenu();
         this.brandMenu.add("Add New Brand").addActionListener(e -> {
-
+            BrandView brandView = new BrandView(null);
+            brandView.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosed(WindowEvent e) {
+                    refreshBrandTable();
+                }
+            });
         });
         this.brandMenu.add("Edit Selected Brand").addActionListener(e -> {
-
-        });;
+            int selectedBrandId = this.getTableSelectedRow(tb_brand, 0);
+            BrandView brandView = new BrandView(this.brandManager.getById(selectedBrandId));
+            brandView.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosed(WindowEvent e) {
+                    refreshBrandTable();
+                }
+            });
+        });
         this.brandMenu.add("Delete Selected Brand").addActionListener(e -> {
+            if (Helper.confirm("Yes")){
+                int selectedBrandId = this.getTableSelectedRow(tb_brand, 0);
+                if (this.brandManager.deleteBrand(selectedBrandId)){
+                    Helper.showErrorMessage("Brand deleted.", "Operation successful.");
+                    refreshBrandTable();
+                } else {
+                    Helper.showErrorMessage("Error.");
+                }
+            }
 
         });;
-
-        this.tb_brand.setComponentPopupMenu(brandMenu);
     }
 }
