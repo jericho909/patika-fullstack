@@ -1,5 +1,7 @@
 package entities;
 
+import core.ComboItem;
+
 public class Model {
     private int model_id;
     private int model_brand_id;
@@ -93,5 +95,9 @@ public class Model {
 
     public void setModel_brand(Brand model_brand) {
         this.model_brand = model_brand;
+    }
+
+    public ComboItem getComboItem(){
+        return new ComboItem(this.getModel_id(), this.getModel_brand().getBrand_name() + " - " + this.getModel_name() + " - " + this.getModel_year() + " - " + this.getModel_gear());
     }
 }

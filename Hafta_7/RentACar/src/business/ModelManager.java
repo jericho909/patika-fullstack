@@ -64,4 +64,33 @@ public class ModelManager {
         }
     }
 
+//    public ArrayList<Model> searchForTable(Model.Fuel fuel, Model.Gear gear, Model.Type type){
+//        String query = "SELECT * FROM public.model";
+//        ArrayList<String> whereList = new ArrayList<>();
+//
+////        if (brandId != 0){
+////            whereList.add("model_brand_id = " + brandId);
+////        }
+//
+//        if (fuel != null){
+//            whereList.add("model_fuel = '" + fuel.toString() + "'");
+//        }
+//
+//        if (gear != null){
+//            whereList.add("model_gear = '" + gear.toString() + "'");
+//        }
+//
+//        if (type != null){
+//            whereList.add("model_type = '" + type.toString() + "'");
+//        }
+//
+//        String whereQuery = String.join(" AND ", whereList);
+//        String finalQuery = query;
+//        if (!whereQuery.isEmpty()){
+//            finalQuery += " WHERE " + whereQuery;
+//        }
+//
+//        return this.modelDao.selectByQuery(finalQuery);
+//    }
+
 }

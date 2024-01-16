@@ -109,7 +109,7 @@ public class ModelDao {
 
 
     public boolean deleteModel(int modelId){
-        String query = "DELETE FROM public.model WHERE model = ?";
+        String query = "DELETE FROM public.model WHERE model_id = ?";
         try {
             PreparedStatement preparedStatement = this.conn.prepareStatement(query);
             preparedStatement.setInt(1, modelId);
