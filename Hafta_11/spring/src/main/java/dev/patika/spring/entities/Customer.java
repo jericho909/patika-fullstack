@@ -1,6 +1,8 @@
 package dev.patika.spring.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,9 +21,11 @@ public class Customer {
     private int id;
     
     @Column(name = "customer_name", nullable = false, length = 20)
+    @NotNull
     private String name;
     
     @Column(name = "customer_mail", nullable = false, unique = true)
+    @Email(message = "Please enter a valid email.")
     private String mail;
     
     @Temporal(TemporalType.DATE)
