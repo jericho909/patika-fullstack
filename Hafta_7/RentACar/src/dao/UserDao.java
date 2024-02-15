@@ -38,6 +38,8 @@ public class UserDao {
             PreparedStatement preparedStatement = this.conn.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
+            System.out.println("Username: " + username);
+            System.out.println("Password: " + password);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()){
                 obj = this.match(rs);
