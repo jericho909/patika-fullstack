@@ -1,0 +1,73 @@
+:root{
+    --main-bg-color: #222831;
+    --footer-color: #EEEEEE;
+    --content-font-color: #EEEEEE;
+    --header-color : #31363F;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--main-bg-color);
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+#header{
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--header-color);
+    justify-content: space-around;
+    padding: 16px;
+}
+
+#header>a{
+    color: white;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+    color: var(--content-font-color);
+    margin: auto;
+}
+
+.a{
+    justify-content: center;
+    align-items: center;
+}
+
+.c{
+    justify-content: center;
+    align-items: center;
+}
+
+#gridcontainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcomeMsg{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    width: 100%;
+    background-color: var(--footer-color);
+}
+
+#github{
+    color: black;
+}
