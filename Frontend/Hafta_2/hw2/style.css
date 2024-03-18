@@ -5,6 +5,8 @@
     margin-right: 16px;
     font-family: arial,sans-serif;
     font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
   }
   
   .headerli a {
@@ -102,6 +104,8 @@
     text-align: start;
     appearance: textfield;
     cursor: text;
+    border: none;
+    width: 527px;
   }
   
   .googlesearch {
@@ -138,6 +142,7 @@
   
   .footerli {
     float: left;
+    list-style: none;
   }
   
   .footerli a {
@@ -154,4 +159,17 @@
   
   .footerli a:hover {
     text-decoration: underline;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
